@@ -7,6 +7,17 @@
     <script src="controller.js" charset="utf-8"></script>
   </head>
   <body ng-controller="FirstController">
-    {{ "Hola " + nombre}}
+    <input placeholder="Add comment" type="text" ng-model="newComment.comment">
+    <br>
+    <input placeholder="username" type="text" ng-model="newComment.username">
+
+    <button  ng-click="addComment();"> Add New Comment</button>    
+    {{ "Hola " + name}}
+    <h3>Comentarios</h3>
+    <ul>
+      <li ng-repeat="com in comments">
+        {{ com.comment }} - <strong> {{ com.username }}</strong>
+      </li>
+    </ul>
   </body>
 </html>
